@@ -339,7 +339,7 @@ export default function Logo({
           alt="TA FLEUR"
           width={120}
           height={120}
-          className="h-11 lg:h-12 w-auto"
+          className="h-14 lg:h-16 w-auto"
           style={{ mixBlendMode: 'multiply' }}
           priority
         />
