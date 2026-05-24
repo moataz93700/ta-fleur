@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TA FLEUR — Charte Graphique Officielle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@200;300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESET & BASE
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:          #FFFFFF;
+      --beige-light:    #F8F2EE;
+      --beige:          #F5EDE8;
+      --beige-medium:   #EDE3DC;
+      --rose-whisper:   #FDF0F4;
+      --rose-warm:      #FAD4E0;
+      --rose-pastel:    #F2B5C5;
+      --rose-medium:    #E8919F;
+      --rose-deep:      #D4748C;
+      --rose-dark:      #B85C74;
+      --rose-wine:      #8B3A52;
+      --gold-light:     #E8D5B0;
+      --gold:           #C9A96E;
+      --gold-medium:    #B8904A;
+      --gold-dark:      #9A7235;
+      --black:          #0F0F0F;
+      --near-black:     #1A1A1A;
+      --gray-700:       #4A4A4A;
+      --gray-500:       #6B6B6B;
+      --gray-300:       #A8A4A0;
+      --font-serif:     'Playfair Display', Georgia, serif;
+      --font-sans:      'Poppins', system-ui, sans-serif;
+      --font-display:   'Montserrat', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--beige-light);
+      color: var(--near-black);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       LAYOUT
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    section {
+      margin-bottom: 6rem;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--beige-medium), transparent);
+      margin: 6rem 0;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       HEADER DE LA CHARTE
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .guide-header {
+      background: var(--near-black);
+      color: var(--white);
+      padding: 5rem 3rem;
+      text-align: center;
+      margin-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guide-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 140%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(242,181,197,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .guide-header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .guide-header .tagline {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+    .guide-header .subtitle {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.45);
+      margin-top: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       SECTION TITLES
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--near-black);
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .section-desc {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--gray-500);
+      max-width: 600px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       LOGOS SECTION
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .logos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .logo-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      border: 1px solid var(--beige-medium);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .logo-card:hover {
+      box-shadow: 0 12px 40px rgba(15,15,15,0.10);
+      transform: translateY(-2px);
+    }
+
+    .logo-card.dark {
+      background: var(--near-black);
+    }
+
+    .logo-card.dark .logo-card-name {
+      color: rgba(255,255,255,0.45);
+    }
+
+    .logo-card.dark .logo-card-note {
+      color: rgba(255,255,255,0.3);
+    }
+
+    .logo-card img, .logo-card object {
+      max-width: 200px;
+      max-height: 150px;
+      object-fit: contain;
+    }
+
+    .logo-card-name {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      text-align: center;
+    }
+
+    .logo-card-note {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--gray-300);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .logo-card-usage {
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: var(--gold);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       RÈGLES DU LOGO
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .rules-grid { grid-template-columns: 1fr; }
+    }
+
+    .rule-card {
+      padding: 1.75rem;
+      border-radius: 10px;
+      border: 1px solid var(--beige-medium);
+    }
+
+    .rule-card.do {
+      background: rgba(242,181,197,0.06);
+      border-color: rgba(212,116,140,0.2);
+    }
+
+    .rule-card.dont {
+      background: rgba(74,74,74,0.03);
+      border-color: rgba(74,74,74,0.12);
+    }
+
+    .rule-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .rule-badge.do   { background: rgba(212,116,140,0.12); color: var(--rose-dark); }
+    .rule-badge.dont { background: rgba(74,74,74,0.10); color: var(--gray-700); }
+
+    .rule-list {
+      list-style: none;
+    }
+
+    .rule-list li {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: var(--gray-700);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--beige-medium);
+      line-height: 1.5;
+    }
+
+    .rule-list li:last-child { border-bottom: none; }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       COULEURS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .colors-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .color-swatch {
+      flex: 0 0 auto;
+      width: 120px;
+    }
+
+    .swatch-rect {
+      width: 120px;
+      height: 90px;
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(15,15,15,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .swatch-rect.white {
+      border: 1px solid var(--beige-medium);
+    }
+
+    .swatch-rect.gold-gradient {
+      background: linear-gradient(135deg, #FAF3E8, #C9A96E, #9A7235);
+    }
+
+    .swatch-name {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--near-black);
+      margin-bottom: 0.2rem;
+    }
+
+    .swatch-hex {
+      font-size: 0.68rem;
+      font-weight: 300;
+      color: var(--gray-500);
+      font-family: 'Courier New', monospace;
+    }
+
+    .swatch-role {
+      font-size: 0.65rem;
+      font-weight: 300;
+      color: var(--gray-300);
+      font-style: italic;
+    }
+
+    .colors-group-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       TYPOGRAPHIES
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .type-showcase {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 3rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--beige-medium);
+    }
+
+    .type-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .type-family {
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .type-use {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--gray-300);
+    }
+
+    .type-scale {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .type-scale-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--beige-light);
+    }
+
+    .type-scale-row:last-child { border-bottom: none; }
+
+    .type-scale-label {
+      font-size: 0.65rem;
+      font-weight: 300;
+      color: var(--gray-300);
+      font-family: monospace;
+      min-width: 70px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       ESPACEMENTS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .spacing-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      border: 1px solid var(--beige-medium);
+    }
+
+    .space-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .space-bar {
+      height: 8px;
+      background: var(--rose-pastel);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .space-label {
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: var(--gray-500);
+      min-width: 80px;
+    }
+
+    .space-value {
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: var(--gray-300);
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       COMPOSANTS VISUELS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .component-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid var(--beige-medium);
+    }
+
+    .component-name {
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0 2rem;
+      height: 52px;
+      border-radius: 9999px;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--near-black);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--rose-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(184,92,116,0.30);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--near-black);
+      border: 1px solid var(--near-black);
+    }
+
+    .btn-secondary:hover {
+      background: var(--near-black);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .btn-rose {
+      background: var(--rose-deep);
+      color: var(--white);
+    }
+
+    .btn-rose:hover {
+      background: var(--rose-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(184,92,116,0.35);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--near-black);
+      border: 1px solid var(--beige-medium);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--rose-pastel);
+      color: var(--rose-dark);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .badge-bestseller { background: var(--near-black); color: var(--gold); }
+    .badge-nouveau    { background: var(--rose-deep);  color: var(--white); }
+    .badge-promo      { background: var(--gold);       color: var(--white); }
+    .badge-epuise     { background: var(--beige-medium); color: var(--gray-500); }
+
+    .badge-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+    /* Card produit mini -->
+    .mini-product-card {
+      background: var(--beige-light);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mini-img {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--rose-warm) 0%, var(--rose-pastel) 100%);
+      position: relative;
+    }
+
+    .mini-img-badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+    }
+
+    .mini-img-heart {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .mini-info {
+      padding: 1rem;
+    }
+
+    .mini-name {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--near-black);
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .mini-cat {
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      margin-bottom: 0.75rem;
+    }
+
+    .mini-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .mini-price {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--near-black);
+    }
+
+    .mini-price-old {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--gray-300);
+      text-decoration: line-through;
+    }
+
+    /* Input -->
+    .input-demo {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--beige-medium);
+      border-radius: 4px;
+      padding: 0 1.25rem;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--near-black);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-demo:focus {
+      border-color: var(--rose-deep);
+    }
+
+    .input-demo::placeholder {
+      color: var(--gray-300);
+    }
+
+    /* Announcement bar -->
+    .announcement-demo {
+      background: var(--near-black);
+      color: var(--white);
+      padding: 0.6rem 1.5rem;
+      text-align: center;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+    }
+
+    .announcement-demo span {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* Stars -->
+    .stars {
+      color: var(--gold);
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       INSPIRATIONS PACKAGING
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .packaging-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .packaging-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid var(--beige-medium);
+    }
+
+    .packaging-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .packaging-name {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--near-black);
+      margin-bottom: 0.5rem;
+    }
+
+    .packaging-desc {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    .packaging-spec {
+      margin-top: 0.75rem;
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       SIZING TABLE
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .sizing-table {
+      width: 100%;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--beige-medium);
+    }
+
+    .sizing-table th {
+      background: var(--beige);
+      padding: 0.875rem 1.25rem;
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-700);
+      text-align: left;
+    }
+
+    .sizing-table td {
+      padding: 0.875rem 1.25rem;
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--near-black);
+      border-top: 1px solid var(--beige-light);
+    }
+
+    .sizing-table tr:hover td { background: var(--beige-light); }
+
+    code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      background: var(--beige);
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      color: var(--rose-dark);
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       ANIMATIONS DEMO
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    @keyframes floatAnim {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    @keyframes shimmerAnim {
+      0%   { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .float-demo {
+      animation: floatAnim 3s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    .shimmer-demo {
+      background: linear-gradient(90deg, var(--beige) 25%, var(--beige-medium) 50%, var(--beige) 75%);
+      background-size: 200% 100%;
+      animation: shimmerAnim 1.8s linear infinite;
+      border-radius: 8px;
+      height: 16px;
+    }
+
+    .anim-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      border: 1px solid var(--beige-medium);
+    }
+
+    .anim-row {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .anim-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      min-width: 140px;
+    }
+
+    /* Navigation
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .side-nav {
+      position: fixed;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 100;
+    }
+
+    @media (max-width: 1400px) {
+      .side-nav { display: none; }
+    }
+
+    .side-nav a {
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--beige-medium);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .side-nav a:hover {
+      background: var(--rose-deep);
+      transform: scale(1.5);
+    }
+
+    .side-nav a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--gray-500);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .side-nav a:hover::after { opacity: 1; }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+       FOOTER CHARTE
+    ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .guide-footer {
+      background: var(--near-black);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 3rem;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
+
+    .guide-footer strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation latérale -->
+  <nav class="side-nav" aria-label="Navigation charte">
+    <a href="#logos"        data-label="Logos"></a>
+    <a href="#regles"       data-label="Règles"></a>
+    <a href="#couleurs"     data-label="Couleurs"></a>
+    <a href="#typographies" data-label="Typographies"></a>
+    <a href="#espacements"  data-label="Espacements"></a>
+    <a href="#composants"   data-label="Composants"></a>
+    <a href="#packaging"    data-label="Packaging"></a>
+    <a href="#tokens"       data-label="Tokens"></a>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       EN-TÊTE
+  ══════════════════════════════════════ -->
+  <header class="guide-header">
+    <p class="subtitle">Charte Graphique Officielle · Version 1.0 · Mai 2026</p>
+    <h1>TA FLEUR</h1>
+    <p class="tagline">Fleurs &amp; Émotions</p>
+  </header>
+
+  <div class="page-wrapper">
+
+    <!-- ══════════════════════════════════════
+         1. LOGOS
+    ══════════════════════════════════════ -->
+    <section id="logos">
+      <p class="section-label">01 — Logos</p>
+      <h2 class="section-title">Les versions du logo</h2>
+      <p class="section-desc">
+        Chaque version du logo a un usage précis. Ne jamais substituer une version à une autre.
+        La zone de protection minimale autour du logo est égale à la hauteur de la lettre "F" de FLEUR.
+      </p>
+
+      <div class="logos-grid">
+
+        <!-- Logo principal -->
+        <div class="logo-card">
+          <img src="logo/ta-fleur-principal.svg" alt="Logo TA FLEUR principal" style="max-width:220px;">
+          <p class="logo-card-name">Logo Principal</p>
+          <p class="logo-card-usage">Site web · Réseaux sociaux · Papeterie</p>
+          <p class="logo-card-note">Version de référence. Toujours utiliser cette version en priorité sur fond blanc ou beige.</p>
+        </div>
+
+        <!-- Monogramme -->
+        <div class="logo-card dark">
+          <img src="logo/ta-fleur-monogramme.svg" alt="Monogramme TA FLEUR" style="max-width:160px;">
+          <p class="logo-card-name">Monogramme</p>
+          <p class="logo-card-usage">Avatar · App icon · Packaging · Stamp</p>
+          <p class="logo-card-note" style="color:rgba(255,255,255,0.3)">Utilisé quand l'espace est contraint. Minimum 64px de diamètre.</p>
+        </div>
+
+        <!-- Simplifié -->
+        <div class="logo-card">
+          <img src="logo/ta-fleur-simplifie.svg" alt="Logo TA FLEUR simplifié" style="max-width:220px;">
+          <p class="logo-card-name">Version Simplifiée</p>
+          <p class="logo-card-usage">Header site · Emails · Documents</p>
+          <p class="logo-card-note">Format horizontal, compact. Idéal pour les headers et signatures email.</p>
+        </div>
+
+        <!-- Noir -->
+        <div class="logo-card" style="background:#F8F2EE;">
+          <img src="logo/ta-fleur-noir.svg" alt="Logo TA FLEUR noir" style="max-width:200px;">
+          <p class="logo-card-name">Version Monochrome Noir</p>
+          <p class="logo-card-usage">Impression · Documents officiels · Tampon</p>
+          <p class="logo-card-note">Pour les supports en noir et blanc uniquement. Jamais sur fond coloré.</p>
+        </div>
+
+        <!-- Blanc -->
+        <div class="logo-card dark" style="background: linear-gradient(135deg, #2a1a20, #1A1A1A);">
+          <img src="logo/ta-fleur-blanc.svg" alt="Logo TA FLEUR blanc" style="max-width:200px;">
+          <p class="logo-card-name">Version Blanche</p>
+          <p class="logo-card-usage">Photos lifestyle · Fonds sombres · Vidéos</p>
+          <p class="logo-card-note" style="color:rgba(255,255,255,0.3)">Sur fonds sombres uniquement. Assurer un ratio de contraste minimum de 4.5:1.</p>
+        </div>
+
+        <!-- Doré -->
+        <div class="logo-card dark" style="background: #0F0F0F;">
+          <img src="logo/ta-fleur-dore.svg" alt="Logo TA FLEUR doré" style="max-width:200px;">
+          <p class="logo-card-name">Version Dorée</p>
+          <p class="logo-card-usage">Packaging premium · Éditions limitées · Certificats</p>
+          <p class="logo-card-note" style="color:rgba(255,255,255,0.3)">Réservée aux communications très premium. Toujours sur fond très sombre.</p>
+        </div>
+
+        <!-- Favicon -->
+        <div class="logo-card dark" style="background:#1A1A1A; grid-column: span 1;">
+          <img src="logo/favicon.svg" alt="Favicon TA FLEUR" style="max-width:96px;">
+          <p class="logo-card-name">Favicon</p>
+          <p class="logo-card-usage">Onglet navigateur · PWA icon · Shortcut</p>
+          <p class="logo-card-note" style="color:rgba(255,255,255,0.3)">Simplifié pour lisibilité à 16px-32px. Ne pas l'utiliser à grande taille.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════════════════════════════
+         2. RÈGLES D'UTILISATION
+    ══════════════════════════════════════ -->
+    <section id="regles">
+      <p class="section-label">02 — Règles d'utilisation</p>
+      <h2 class="section-title">Ce qu'il faut faire et éviter</h2>
+      <p class="section-desc">
+        Le logo est l'actif le plus précieux de la marque. Sa cohérence garantit la confiance
+        et la mémorisation. Ces règles ne sont pas des suggestions — elles sont impératives.
+      </p>
+
+      <div class="rules-grid">
+        <div class="rule-card do">
+          <span class="rule-badge do">✓ À faire</span>
+          <ul class="rule-list">
+            <li>Utiliser le logo sur fond blanc, beige ou noir uniquement</li>
+            <li>Respecter la zone de protection minimale autour du logo</li>
+            <li>Utiliser la version blanche sur photos sombres</li>
+            <li>Conserver les proportions d'origine (ne jamais déformer)</li>
+            <li>Taille minimum : 120px de large pour le logo principal</li>
+            <li>Taille minimum : 64px pour le monogramme en cercle</li>
+            <li>Utiliser uniquement les fichiers SVG ou PNG haute résolution fournis</li>
+            <li>Toujours tester la lisibilité avant publication</li>
+          </ul>
+        </div>
+
+        <div class="rule-card dont">
+          <span class="rule-badge dont">✗ À ne pas faire</span>
+          <ul class="rule-list">
+            <li>Ne jamais changer les couleurs du logo de façon non officielle</li>
+            <li>Ne jamais étirer ou comprimer le logo</li>
+            <li>Ne jamais ajouter d'effets (ombre portée forte, outline, 3D)</li>
+            <li>Ne jamais placer le logo sur fond rose vif, photo colorée, gradient</li>
+            <li>Ne jamais recréer le logo en le retapant dans Word/Canva</li>
+            <li>Ne jamais utiliser le favicon à grande taille</li>
+            <li>Ne jamais modifier la typographie ou l'espacement des lettres</li>
+            <li>Ne jamais déplacer la fleur par rapport aux lettres</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tailles minimum -->
+      <br>
+      <table class="sizing-table">
+        <thead>
+          <tr>
+            <th>Version du logo</th>
+            <th>Largeur minimum</th>
+            <th>Usage recommandé</th>
+            <th>Format</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Logo principal</td>
+            <td><strong>120px</strong></td>
+            <td>Site web, réseaux sociaux, impression ≥ 3cm</td>
+            <td><code>SVG</code> ou <code>PNG @2x</code></td>
+          </tr>
+          <tr>
+            <td>Logo simplifié</td>
+            <td><strong>90px</strong></td>
+            <td>Header mobile, emails, documents</td>
+            <td><code>SVG</code> ou <code>PNG @2x</code></td>
+          </tr>
+          <tr>
+            <td>Monogramme cercle</td>
+            <td><strong>64px</strong></td>
+            <td>Avatar, app icon, packaging petit format</td>
+            <td><code>SVG</code> ou <code>PNG @3x</code></td>
+          </tr>
+          <tr>
+            <td>Favicon</td>
+            <td><strong>16px</strong></td>
+            <td>Onglet navigateur, raccourci</td>
+            <td><code>SVG</code> ou <code>ICO</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════════════════════════════
+         3. PALETTE DE COULEURS
+    ══════════════════════════════════════ -->
+    <section id="couleurs">
+      <p class="section-label">03 — Palette</p>
+      <h2 class="section-title">Les couleurs officielles</h2>
+      <p class="section-desc">
+        La palette de TA FLEUR est construite autour du rose pastel, du beige nude et de l'or doux.
+        Ces couleurs évoquent la douceur, la féminité et le luxe moderne.
+        Ne jamais utiliser de couleurs en dehors de cette palette dans les communications officielles.
+      </p>
+
+      <p class="colors-group-label">Fonds & Espaces</p>
+      <div class="colors-row">
+        <div class="color-swatch">
+          <div class="swatch-rect white" style="background:#FFFFFF;"></div>
+          <p class="swatch-name">Blanc pur</p>
+          <p class="swatch-hex">#FFFFFF</p>
+          <p class="swatch-role">Fond principal</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#F8F2EE;"></div>
+          <p class="swatch-name">Beige clair</p>
+          <p class="swatch-hex">#F8F2EE</p>
+          <p class="swatch-role">Fond secondaire</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#F5EDE8;"></div>
+          <p class="swatch-name">Beige</p>
+          <p class="swatch-hex">#F5EDE8</p>
+          <p class="swatch-role">Sections alternées</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#EDE3DC;"></div>
+          <p class="swatch-name">Beige moyen</p>
+          <p class="swatch-hex">#EDE3DC</p>
+          <p class="swatch-role">Bordures, séparateurs</p>
+        </div>
+      </div>
+
+      <p class="colors-group-label">Rose — Couleur signature TA FLEUR</p>
+      <div class="colors-row">
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#FDF0F4;"></div>
+          <p class="swatch-name">Rose whisper</p>
+          <p class="swatch-hex">#FDF0F4</p>
+          <p class="swatch-role">Backgrounds subtils</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#FAD4E0;"></div>
+          <p class="swatch-name">Rose warm</p>
+          <p class="swatch-hex">#FAD4E0</p>
+          <p class="swatch-role">Accents légers</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#F2B5C5;"></div>
+          <p class="swatch-name">Rose pastel ★</p>
+          <p class="swatch-hex">#F2B5C5</p>
+          <p class="swatch-role">Couleur signature</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#E8919F;"></div>
+          <p class="swatch-name">Rose medium</p>
+          <p class="swatch-hex">#E8919F</p>
+          <p class="swatch-role">Hover states</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#D4748C;"></div>
+          <p class="swatch-name">Rose deep</p>
+          <p class="swatch-hex">#D4748C</p>
+          <p class="swatch-role">CTA secondaire</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#B85C74;"></div>
+          <p class="swatch-name">Rose dark</p>
+          <p class="swatch-hex">#B85C74</p>
+          <p class="swatch-role">Hover CTA, focus</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#8B3A52;"></div>
+          <p class="swatch-name">Rose wine</p>
+          <p class="swatch-hex">#8B3A52</p>
+          <p class="swatch-role">Accents premium</p>
+        </div>
+      </div>
+
+      <p class="colors-group-label">Or — Accent luxe</p>
+      <div class="colors-row">
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#FAF3E8;"></div>
+          <p class="swatch-name">Or whisper</p>
+          <p class="swatch-hex">#FAF3E8</p>
+          <p class="swatch-role">Background or subtil</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#E8D5B0;"></div>
+          <p class="swatch-name">Or clair</p>
+          <p class="swatch-hex">#E8D5B0</p>
+          <p class="swatch-role">Bordures premium</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect gold-gradient"></div>
+          <p class="swatch-name">Or ★</p>
+          <p class="swatch-hex">#C9A96E</p>
+          <p class="swatch-role">Accent luxe principal</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#B8904A;"></div>
+          <p class="swatch-name">Or medium</p>
+          <p class="swatch-hex">#B8904A</p>
+          <p class="swatch-role">Texte or sur fond clair</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#9A7235;"></div>
+          <p class="swatch-name">Or dark</p>
+          <p class="swatch-hex">#9A7235</p>
+          <p class="swatch-role">Contraste élevé</p>
+        </div>
+      </div>
+
+      <p class="colors-group-label">Neutres</p>
+      <div class="colors-row">
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#0F0F0F;"></div>
+          <p class="swatch-name">Noir</p>
+          <p class="swatch-hex">#0F0F0F</p>
+          <p class="swatch-role">Fond header/footer</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#1A1A1A;"></div>
+          <p class="swatch-name">Noir élégant ★</p>
+          <p class="swatch-hex">#1A1A1A</p>
+          <p class="swatch-role">Texte principal</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#6B6B6B;"></div>
+          <p class="swatch-name">Gris chaud</p>
+          <p class="swatch-hex">#6B6B6B</p>
+          <p class="swatch-role">Texte secondaire</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-rect" style="background:#A8A4A0;"></div>
+          <p class="swatch-name">Gris clair</p>
+          <p class="swatch-hex">#A8A4A0</p>
+          <p class="swatch-role">Placeholders, labels</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════════════════════════════
+         4. TYPOGRAPHIES
+    ══════════════════════════════════════ -->
+    <section id="typographies">
+      <p class="section-label">04 — Typographies</p>
+      <h2 class="section-title">Le système typographique</h2>
+      <p class="section-desc">
+        Trois familles, chacune avec un rôle précis. La typographie est ce qui différencie immédiatement
+        TA FLEUR d'un site générique. Playfair Display incarne l'émotion, Montserrat incarne la modernité,
+        Poppins incarne la lisibilité.
+      </p>
+
+      <!-- Playfair Display -->
+      <div class="type-showcase">
+        <div class="type-meta">
+          <span class="type-family">Playfair Display</span>
+          <span class="type-use">— Titres H1, H2 / Logo / Citations / Noms de produits</span>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-row">
+            <span class="type-scale-label">96px / 700</span>
+            <span style="font-family:'Playfair Display',serif; font-size:clamp(2.5rem,6vw,6rem); font-weight:700; letter-spacing:-0.02em; line-height:1;">Des fleurs qui racontent</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">60px / 700</span>
+            <span style="font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3.75rem); font-weight:700; letter-spacing:-0.02em;">Bouquets de saison</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">36px / 600</span>
+            <span style="font-family:'Playfair Display',serif; font-size:2.25rem; font-weight:600;">Collection Romantique</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">30px / 500</span>
+            <span style="font-family:'Playfair Display',serif; font-size:1.875rem; font-weight:500;">Rose Éternelle — Édition Limitée</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">24px / Italic</span>
+            <span style="font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:400; font-style:italic; color:#6B6B6B;">"Un cadeau qui dit tout sans un mot."</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Montserrat -->
+      <div class="type-showcase">
+        <div class="type-meta">
+          <span class="type-family">Montserrat</span>
+          <span class="type-use">— Sous-titres H3, H4 / Boutons / Labels / Navigation / Prix</span>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-row">
+            <span class="type-scale-label">24px / 600</span>
+            <span style="font-family:'Montserrat',sans-serif; font-size:1.5rem; font-weight:600;">Nos Best-Sellers</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">18px / 500</span>
+            <span style="font-family:'Montserrat',sans-serif; font-size:1.125rem; font-weight:500;">Personnalisez votre bouquet</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">13px / 700 / tracked</span>
+            <span style="font-family:'Montserrat',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;">Ajouter au panier</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">11px / 600 / luxury</span>
+            <span style="font-family:'Montserrat',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:0.35em; text-transform:uppercase; color:#C9A96E;">LIVRAISON OFFERTE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Poppins -->
+      <div class="type-showcase">
+        <div class="type-meta">
+          <span class="type-family">Poppins</span>
+          <span class="type-use">— Corps de texte / Descriptions / FAQ / Reviews / Taglines</span>
+        </div>
+        <div class="type-scale">
+          <div class="type-scale-row">
+            <span class="type-scale-label">18px / 300</span>
+            <span style="font-family:'Poppins',sans-serif; font-size:1.125rem; font-weight:300; line-height:1.75;">Des fleurs cueillis à l'aube, livrées le jour même.</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">16px / 300</span>
+            <span style="font-family:'Poppins',sans-serif; font-size:1rem; font-weight:300; line-height:1.75; color:#6B6B6B;">Chaque bouquet est préparé avec soin par nos fleuristes. Fraîcheur garantie ou remboursé.</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">14px / 400</span>
+            <span style="font-family:'Poppins',sans-serif; font-size:0.875rem; font-weight:400;">Livraison 24h · Paiement sécurisé · Échange gratuit</span>
+          </div>
+          <div class="type-scale-row">
+            <span class="type-scale-label">12px / 300 / tracked</span>
+            <span style="font-family:'Poppins',sans-serif; font-size:0.75rem; font-weight:300; letter-spacing:0.1em; color:#A8A4A0;">FLEURS &amp; ÉMOTIONS · EST. 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════════════════════════════
+         5. ESPACEMENTS
+    ══════════════════════════════════════ -->
+    <section id="espacements">
+      <p class="section-label">05 — Espacements</p>
+      <h2 class="section-title">Le système d'espacement</h2>
+      <p class="section-desc">
+        Le luxe, c'est l'espace. Chaque section doit respirer. Les marges internes doivent être
+        généreuses. En cas de doute, augmentez toujours l'espace plutôt que de le réduire.
+      </p>
+
+      <div class="spacing-grid">
+        <div class="space-row">
+          <span class="anim-label">4px — space-1</span>
+          <div class="space-bar" style="width:4px;"></div>
+          <span class="space-value">Séparateur minimal, bordures</span>
+        </div>
+        <div class="space-row">
+          <span class="anim-label">8px — space-2</span>
+          <div class="space-bar" style="width:8px;"></div>
+          <span class="space-value">Gap interne composants</span>
+        </div>
+        <div class="space-row">
+          <span class="anim-label">16px — space-4</span>
+          <div class="space-bar" style="width:16px;"></div>
+          <span class="space-value">Padding cards, gap tight</span>
+        </div>
+        <div class="space-row">
+          <span class="anim-label">24px — space-6</span>
+          <div class="space-bar" style="width:24px;"></div>
+          <span class="space-value">Gap standard entre éléments</span>
+        </div>
+        <div class="space-row">
+          <span class="anim-label">32px — space-8</span>
+          <div class="space-bar" style="width:32px;"></div>
+          <span class="space-value">Padding sections mobiles</span>
+        </div>
+        <div class="space-row">
+          <span class="anim-label">48px — space-12</span>
+          <div class="space-bar" style="width:48px;"></div>
+          <span class="space-value">Gap entre blocs principaux</span>
+        </div>
+        <div class="space-row">
+          <span class="anim-label">64px — space-16</span>
+          <div class="space-bar" style="width:64px;"></div>
+          <span class="space-value">Padding section desktop sm</span>
+        </div>
+        <div class="space-row">
+          <span class="anim-label">96px — space-24</span>
+          <div class="space-bar" style="width:96px;"></div>
+          <span class="space-value">Padding section desktop</span>
+        </div>
+        <div class="space-row">
+          <span class="anim-label">128px — space-32</span>
+          <div class="space-bar" style="width:128px;"></div>
+          <span class="space-value">Padding hero, sections premium</span>
+        </div>
+        <div class="space-row">
+          <span class="anim-label">192px — space-48</span>
+          <div class="space-bar" style="width:192px;"></div>
+          <span class="space-value">Hero section padding xl</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════════════════════════════
+         6. COMPOSANTS VISUELS
+    ══════════════════════════════════════ -->
+    <section id="composants">
+      <p class="section-label">06 — Composants</p>
+      <h2 class="section-title">Composants visuels de la marque</h2>
+      <p class="section-desc">
+        Les composants UI de TA FLEUR suivent une logique de cohérence absolue.
+        Chaque bouton, badge, champ de formulaire est une expression de la marque.
+      </p>
+
+      <div class="components-grid">
+
+        <!-- Boutons -->
+        <div class="component-card">
+          <p class="component-name">Boutons — 4 variantes</p>
+          <div class="btn-group">
+            <a class="btn btn-primary">Ajouter au panier</a>
+            <a class="btn btn-rose">Commander</a>
+            <a class="btn btn-secondary">Voir la collection</a>
+            <a class="btn btn-ghost">En savoir plus</a>
+          </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="component-card">
+          <p class="component-name">Badges produit</p>
+          <div class="badge-row">
+            <span class="badge badge-bestseller">⭐ Best-Seller</span>
+            <span class="badge badge-nouveau">Nouveau</span>
+            <span class="badge badge-promo">−20%</span>
+            <span class="badge badge-epuise">Épuisé</span>
+          </div>
+        </div>
+
+        <!-- Card produit mini -->
+        <div class="component-card">
+          <p class="component-name">Carte produit</p>
+          <div class="mini-product-card">
+            <div class="mini-img">
+              <div class="mini-img-badge"><span class="badge badge-bestseller">⭐ Best-Seller</span></div>
+              <div class="mini-img-heart">♡</div>
+            </div>
+            <div class="mini-info">
+              <p class="mini-cat">Bouquet · Romantique</p>
+              <p class="mini-name">Rose Éternelle</p>
+              <div class="mini-price-row">
+                <span class="mini-price">79,00 €</span>
+                <span class="mini-price-old">99,00 €</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div class="component-card">
+          <p class="component-name">Champ de formulaire</p>
+          <input class="input-demo" type="text" placeholder="Votre adresse email">
+          <br><br>
+          <input class="input-demo" type="text" placeholder="Message personnalisé (optionnel)">
+        </div>
+
+        <!-- Barre d'annonce -->
+        <div class="component-card">
+          <p class="component-name">Barre d'annonce</p>
+          <div class="announcement-demo">
+            Livraison offerte dès <span>59€</span> · Commandez avant 14h pour livraison aujourd'hui
+          </div>
+        </div>
+
+        <!-- Stars & Reviews -->
+        <div class="component-card">
+          <p class="component-name">Avis clients</p>
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:0.9rem; color:#4A4A4A; margin-top:0.5rem; line-height:1.6;">"Les fleurs étaient sublimes, ma femme a pleuré de joie."</p>
+              <p style="font-size:0.7rem; color:#A8A4A0; margin-top:0.4rem; letter-spacing:0.05em;">— Marie L. · Vérifié</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════════════════════════════
+         7. PACKAGING LUXE
+    ══════════════════════════════════════ -->
+    <section id="packaging">
+      <p class="section-label">07 — Packaging</p>
+      <h2 class="section-title">Inspirations packaging luxe</h2>
+      <p class="section-desc">
+        Le packaging est le premier contact physique avec la marque. Il doit déclencher une émotion
+        immédiate à l'ouverture. Références : Ladurée, Charlotte Tilbury, Jacquemus.
+      </p>
+
+      <div class="packaging-grid">
+        <div class="packaging-card">
+          <span class="packaging-icon">🎁</span>
+          <p class="packaging-name">Boîte signature</p>
+          <p class="packaging-desc">Boîte rigide noire mat avec logo or en relief. Ruban rose pastel fermé en nœud.</p>
+          <p class="packaging-spec">Noir #1A1A1A · Or foil · Ruban #F2B5C5</p>
+        </div>
+        <div class="packaging-card">
+          <span class="packaging-icon">🛍️</span>
+          <p class="packaging-name">Sac papier</p>
+          <p class="packaging-desc">Papier kraft blanc ivoire. Logo TA doré. Cordes coton nude. Papier de soie rose intérieur.</p>
+          <p class="packaging-spec">Ivoire · Or #C9A96E · Cordes nude</p>
+        </div>
+        <div class="packaging-card">
+          <span class="packaging-icon">💌</span>
+          <p class="packaging-name">Carte message</p>
+          <p class="packaging-desc">Carte Bristol 350g, beige nude. Logo en embossage. Lignes fines pour le message.</p>
+          <p class="packaging-spec">Beige #F5EDE8 · Embossage or</p>
+        </div>
+        <div class="packaging-card">
+          <span class="packaging-icon">🎀</span>
+          <p class="packaging-name">Papier de soie</p>
+          <p class="packaging-desc">Papier de soie rose whisper imprimé motif floral discret en or rosé.</p>
+          <p class="packaging-spec">Rose #FDF0F4 · Motif or rosé</p>
+        </div>
+        <div class="packaging-card">
+          <span class="packaging-icon">🏷️</span>
+          <p class="packaging-name">Étiquette produit</p>
+          <p class="packaging-desc">Étiquette kraft ronde. Tampon monogramme TA. Cordelette dorée.</p>
+          <p class="packaging-spec">Kraft naturel · Tampon noir · Cordelette or</p>
+        </div>
+        <div class="packaging-card">
+          <span class="packaging-icon">📦</span>
+          <p class="packaging-name">Boîte expédition</p>
+          <p class="packaging-desc">Boîte expédition blanche. Logo TA imprimé face. Autocollant de scellé rose.</p>
+          <p class="packaging-spec">Blanc · Logo noir · Scellé rose</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════════════════════════════════
+         8. DESIGN TOKENS REFERENCE
+    ══════════════════════════════════════ -->
+    <section id="tokens">
+      <p class="section-label">08 — Tokens</p>
+      <h2 class="section-title">Référence des design tokens</h2>
+      <p class="section-desc">
+        Les design tokens sont les variables CSS utilisées dans tout le code. Toujours référencer
+        ces variables plutôt que des valeurs codées en dur.
+      </p>
+
+      <table class="sizing-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Valeur</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>--color-rose-pastel</code></td><td>#F2B5C5</td><td>Couleur signature principale</td></tr>
+          <tr><td><code>--color-rose-deep</code></td><td>#D4748C</td><td>CTA rose, boutons secondaires</td></tr>
+          <tr><td><code>--color-gold</code></td><td>#C9A96E</td><td>Accents luxe, séparateurs</td></tr>
+          <tr><td><code>--color-near-black</code></td><td>#1A1A1A</td><td>Texte principal, bouton primaire</td></tr>
+          <tr><td><code>--color-beige</code></td><td>#F5EDE8</td><td>Sections alternées, fond cards</td></tr>
+          <tr><td><code>--font-serif</code></td><td>Playfair Display</td><td>Titres, noms produits, quotes</td></tr>
+          <tr><td><code>--font-sans</code></td><td>Poppins</td><td>Corps de texte, descriptions</td></tr>
+          <tr><td><code>--font-display</code></td><td>Montserrat</td><td>Boutons, labels, navigation</td></tr>
+          <tr><td><code>--tracking-luxury</code></td><td>0.35em</td><td>Taglines, labels ultra-espacés</td></tr>
+          <tr><td><code>--tracking-brand</code></td><td>0.25em</td><td>"FLEUR" dans le logo</td></tr>
+          <tr><td><code>--ease-luxury</code></td><td>cubic-bezier(0.25, 0.46, 0.45, 0.94)</td><td>Transitions standard</td></tr>
+          <tr><td><code>--ease-elegant</code></td><td>cubic-bezier(0.22, 1, 0.36, 1)</td><td>Animations d'entrée</td></tr>
+          <tr><td><code>--shadow-rose</code></td><td>0 8px 32px rgba(212,116,140,0.18)</td><td>Ombre colorée rose</td></tr>
+          <tr><td><code>--shadow-gold</code></td><td>0 8px 32px rgba(201,169,110,0.22)</td><td>Ombre colorée or</td></tr>
+          <tr><td><code>--section-padding-lg</code></td><td>8rem (128px)</td><td>Padding vertical sections desktop</td></tr>
+          <tr><td><code>--header-height</code></td><td>72px</td><td>Hauteur du header fixe</td></tr>
+          <tr><td><code>--drawer-width</code></td><td>420px</td><td>Largeur du tiroir panier</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div><!-- /page-wrapper -->
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="guide-footer">
+    <p>
+      <strong>TA FLEUR</strong> — Charte Graphique Officielle · Version 1.0 · Mai 2026
+    </p>
+    <p style="margin-top:0.5rem;">
+      Document confidentiel · Usage interne uniquement · Ne pas diffuser sans autorisation
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+/**
+ * TA FLEUR — Design Tokens
+ * Système de design officiel de la marque
+ * Version 1.0 — Mai 2026
+ *
+ * Ces variables CSS constituent la source unique de vérité
+ * pour toute l'identité visuelle de TA FLEUR.
+ * Ne jamais utiliser de valeurs en dur dans le code — toujours référencer ces tokens.
+ */
+
+/*
+  Fonts : chargées via next/font/google dans app/layout.tsx
+  Les variables --ta-playfair, --ta-poppins, --ta-montserrat
+  sont injectées automatiquement par Next.js sur le <html>.
+*/
+
+:root {
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     COULEURS — Palette officielle
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* Fonds */
+  --color-white:            #FFFFFF;
+  --color-beige-light:      #F8F2EE;
+  --color-beige:            #F5EDE8;
+  --color-beige-medium:     #EDE3DC;
+  --color-beige-dark:       #E0D0C8;
+
+  /* Rose — couleur signature */
+  --color-rose-whisper:     #FDF0F4;
+  --color-rose-warm:        #FAD4E0;
+  --color-rose-pastel:      #F2B5C5;
+  --color-rose-medium:      #E8919F;
+  --color-rose-deep:        #D4748C;
+  --color-rose-dark:        #B85C74;
+  --color-rose-wine:        #8B3A52;
+
+  /* Or — accent luxe */
+  --color-gold-whisper:     #FAF3E8;
+  --color-gold-light:       #E8D5B0;
+  --color-gold:             #C9A96E;
+  --color-gold-medium:      #B8904A;
+  --color-gold-dark:        #9A7235;
+
+  /* Neutres */
+  --color-black:            #0F0F0F;
+  --color-near-black:       #1A1A1A;
+  --color-gray-900:         #2D2D2D;
+  --color-gray-700:         #4A4A4A;
+  --color-gray-500:         #6B6B6B;
+  --color-gray-400:         #8A8A8A;
+  --color-gray-300:         #A8A4A0;
+  --color-gray-200:         #C8C4C0;
+  --color-gray-100:         #E8E4E0;
+
+  /* Couleurs sémantiques */
+  --color-bg-primary:       var(--color-white);
+  --color-bg-secondary:     var(--color-beige-light);
+  --color-bg-accent:        var(--color-beige);
+  --color-text-primary:     var(--color-near-black);
+  --color-text-secondary:   var(--color-gray-500);
+  --color-text-tertiary:    var(--color-gray-300);
+  --color-accent-primary:   var(--color-rose-pastel);
+  --color-accent-secondary: var(--color-rose-deep);
+  --color-accent-luxury:    var(--color-gold);
+  --color-border:           var(--color-beige-medium);
+  --color-border-light:     var(--color-beige-light);
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     TYPOGRAPHIES
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* Variables injectées par next/font via layout.tsx :
+     --ta-playfair  → Playfair Display (serif)
+     --ta-poppins   → Poppins (sans)
+     --ta-montserrat → Montserrat (display)
+     Fallbacks garantis si next/font échoue. */
+  --font-serif:    var(--ta-playfair), 'Georgia', 'Times New Roman', serif;
+  --font-sans:     var(--ta-poppins), 'Inter', system-ui, sans-serif;
+  --font-display:  var(--ta-montserrat), 'Helvetica Neue', system-ui, sans-serif;
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     ÉCHELLE TYPOGRAPHIQUE
+     Base : 16px / ratio : 1.250 (Major Third)
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --text-2xs:   0.625rem;    /* 10px — micro labels */
+  --text-xs:    0.75rem;     /* 12px — captions, tags */
+  --text-sm:    0.875rem;    /* 14px — small body */
+  --text-base:  1rem;        /* 16px — body */
+  --text-lg:    1.125rem;    /* 18px — lead text */
+  --text-xl:    1.25rem;     /* 20px — card titles */
+  --text-2xl:   1.5rem;      /* 24px — section sub */
+  --text-3xl:   1.875rem;    /* 30px — section titles */
+  --text-4xl:   2.25rem;     /* 36px — display sm */
+  --text-5xl:   3rem;        /* 48px — display md */
+  --text-6xl:   3.75rem;     /* 60px — display lg */
+  --text-7xl:   4.5rem;      /* 72px — hero sub */
+  --text-8xl:   6rem;        /* 96px — hero */
+  --text-9xl:   8rem;        /* 128px — mega hero */
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     POIDS DE POLICE
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --font-thin:        200;
+  --font-light:       300;
+  --font-regular:     400;
+  --font-medium:      500;
+  --font-semibold:    600;
+  --font-bold:        700;
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     ESPACEMENT ENTRE LETTRES (tracking)
+     Le luxe se mesure au silence entre les lettres.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --tracking-tightest:  -0.04em;   /* gros titres serif */
+  --tracking-tight:     -0.02em;   /* titres */
+  --tracking-normal:     0em;
+  --tracking-wide:       0.05em;   /* labels */
+  --tracking-wider:      0.10em;   /* boutons, sous-titres */
+  --tracking-widest:     0.20em;   /* luxury labels */
+  --tracking-brand:      0.25em;   /* FLEUR dans le logo */
+  --tracking-luxury:     0.35em;   /* taglines ultra-espacées */
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     HAUTEUR DE LIGNE
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --leading-none:     1;
+  --leading-tight:    1.1;
+  --leading-snug:     1.25;
+  --leading-normal:   1.5;
+  --leading-relaxed:  1.75;
+  --leading-loose:    2.2;
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     ESPACEMENT (grille de 4px)
+     Section luxury = toujours plus d'espace qu'on ne croit nécessaire
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --space-px:   1px;
+  --space-0-5:  0.125rem;   /* 2px */
+  --space-1:    0.25rem;    /* 4px */
+  --space-1-5:  0.375rem;   /* 6px */
+  --space-2:    0.5rem;     /* 8px */
+  --space-3:    0.75rem;    /* 12px */
+  --space-4:    1rem;       /* 16px */
+  --space-5:    1.25rem;    /* 20px */
+  --space-6:    1.5rem;     /* 24px */
+  --space-7:    1.75rem;    /* 28px */
+  --space-8:    2rem;       /* 32px */
+  --space-10:   2.5rem;     /* 40px */
+  --space-12:   3rem;       /* 48px */
+  --space-14:   3.5rem;     /* 56px */
+  --space-16:   4rem;       /* 64px */
+  --space-20:   5rem;       /* 80px */
+  --space-24:   6rem;       /* 96px */
+  --space-28:   7rem;       /* 112px */
+  --space-32:   8rem;       /* 128px */
+  --space-40:   10rem;      /* 160px */
+  --space-48:   12rem;      /* 192px */
+  --space-56:   14rem;      /* 224px */
+  --space-64:   16rem;      /* 256px */
+
+  /* Sections — espacements verticaux officiels */
+  --section-padding-sm:     4rem;    /* mobile */
+  --section-padding-md:     6rem;    /* tablet */
+  --section-padding-lg:     8rem;    /* desktop */
+  --section-padding-xl:    12rem;    /* hero/feature */
+
+  /* Conteneur max-width */
+  --container-sm:   640px;
+  --container-md:   768px;
+  --container-lg:   1024px;
+  --container-xl:   1280px;
+  --container-2xl:  1440px;
+  --container-padding: clamp(1.5rem, 5vw, 6rem);
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     BORDER RADIUS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --radius-none:   0;
+  --radius-xs:     2px;
+  --radius-sm:     4px;
+  --radius-md:     8px;
+  --radius-lg:     12px;
+  --radius-xl:     16px;
+  --radius-2xl:    24px;
+  --radius-3xl:    32px;
+  --radius-full:   9999px;
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     OMBRES — Système luxury
+     Les ombres du luxe : douces, chaudes, jamais agressives
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --shadow-xs:     0 1px 3px 0 rgba(15, 15, 15, 0.04);
+  --shadow-sm:     0 2px 8px 0 rgba(15, 15, 15, 0.06);
+  --shadow-md:     0 4px 16px 0 rgba(15, 15, 15, 0.08);
+  --shadow-lg:     0 8px 32px 0 rgba(15, 15, 15, 0.10);
+  --shadow-xl:     0 16px 48px 0 rgba(15, 15, 15, 0.12);
+  --shadow-2xl:    0 24px 80px 0 rgba(15, 15, 15, 0.14);
+
+  /* Ombres colorées — signature TA FLEUR */
+  --shadow-rose:   0 8px 32px 0 rgba(212, 116, 140, 0.18);
+  --shadow-gold:   0 8px 32px 0 rgba(201, 169, 110, 0.22);
+  --shadow-beige:  0 4px 24px 0 rgba(237, 227, 220, 0.60);
+
+  /* Ombres produit (card hover) */
+  --shadow-card:         0 2px 8px 0 rgba(15, 15, 15, 0.06);
+  --shadow-card-hover:   0 12px 40px 0 rgba(15, 15, 15, 0.12);
+
+  /* Ombres inset (champs de formulaire) */
+  --shadow-inset:        inset 0 1px 3px 0 rgba(15, 15, 15, 0.08);
+  --shadow-inset-focus:  inset 0 1px 3px 0 rgba(212, 116, 140, 0.15);
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     TRANSITIONS & ANIMATIONS
+     Le luxe ne se précipite pas.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* Durées */
+  --duration-instant:    100ms;
+  --duration-fast:       200ms;
+  --duration-base:       300ms;
+  --duration-slow:       500ms;
+  --duration-slower:     700ms;
+  --duration-luxury:     900ms;
+  --duration-epic:      1200ms;
+
+  /* Courbes d'accélération */
+  --ease-linear:   linear;
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-luxury:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-elegant:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Transitions composées (prêtes à l'emploi) */
+  --transition-base:    var(--duration-base) var(--ease-luxury);
+  --transition-slow:    var(--duration-slow) var(--ease-elegant);
+  --transition-luxury:  var(--duration-luxury) var(--ease-elegant);
+  --transition-color:   color var(--duration-fast) var(--ease-out),
+                        background-color var(--duration-fast) var(--ease-out),
+                        border-color var(--duration-fast) var(--ease-out);
+  --transition-transform: transform var(--duration-base) var(--ease-luxury);
+  --transition-opacity:   opacity var(--duration-slow) var(--ease-out);
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     Z-INDEX — Hiérarchie des couches
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --z-below:      -1;
+  --z-base:        0;
+  --z-raised:     10;
+  --z-dropdown:  100;
+  --z-sticky:    200;
+  --z-overlay:   300;
+  --z-modal:     400;
+  --z-toast:     500;
+  --z-tooltip:   600;
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     TAILLE MINIMUM DU LOGO
+     Règles d'utilisation officielles
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* Logo principal : minimum 120px de large */
+  --logo-min-width:         120px;
+  /* Logo simplifié : minimum 80px de large */
+  --logo-simplifie-min:      80px;
+  /* Monogramme : minimum 32px de côté */
+  --monogram-min-size:       32px;
+  /* Zone de protection (clear space) = hauteur du M de FLEUR */
+  --logo-clear-space:        0.5em;
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     GRILLE — Layout system
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --grid-cols:       12;
+  --grid-gap:        1.5rem;
+  --grid-gap-lg:     2rem;
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     BREAKPOINTS (référence)
+     Mobile-first — toujours
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* sm:  640px  — grand mobile / petite tablette */
+  /* md:  768px  — tablette portrait */
+  /* lg:  1024px — tablette paysage / petit laptop */
+  /* xl:  1280px — laptop */
+  /* 2xl: 1440px — desktop */
+  /* 3xl: 1920px — grand écran */
+
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     COMPOSANTS — Tokens spécifiques
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* Boutons */
+  --btn-height-sm:     36px;
+  --btn-height-md:     48px;
+  --btn-height-lg:     56px;
+  --btn-height-xl:     64px;
+  --btn-padding-x-sm:  1.25rem;
+  --btn-padding-x-md:  2rem;
+  --btn-padding-x-lg:  2.5rem;
+  --btn-border-width:  1px;
+  --btn-radius:        var(--radius-full);
+
+  /* Inputs */
+  --input-height:      52px;
+  --input-padding-x:   1.25rem;
+  --input-border:      1px solid var(--color-beige-medium);
+  --input-border-focus: 1px solid var(--color-rose-deep);
+  --input-radius:      var(--radius-sm);
+  --input-bg:          var(--color-white);
+
+  /* Cards produit */
+  --card-radius:         var(--radius-lg);
+  --card-padding:        1.5rem;
+  --card-img-ratio:      4/5;   /* portrait — optimal pour bouquets */
+
+  /* Header */
+  --header-height:       72px;
+  --header-height-lg:    88px;
+  --header-bg:           rgba(255, 255, 255, 0.95);
+  --header-backdrop:     blur(12px);
+
+  /* Announcement bar */
+  --announcement-height: 40px;
+  --announcement-bg:     var(--color-near-black);
+  --announcement-color:  var(--color-white);
+
+  /* Drawer (panier) */
+  --drawer-width:        420px;
+  --drawer-width-mobile: 100%;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MODE SOMBRE (si implémenté)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (prefers-color-scheme: dark) {
+  /* Intentionnellement vide — TA FLEUR est une marque lumineuse.
+     Le mode sombre peut être activé manuellement via [data-theme="dark"]
+     mais n'est pas le default. */
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CLASSES UTILITAIRES DE MARQUE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.font-serif    { font-family: var(--font-serif); }
+.font-sans     { font-family: var(--font-sans); }
+.font-display  { font-family: var(--font-display); }
+
+.tracking-brand    { letter-spacing: var(--tracking-brand); }
+.tracking-luxury   { letter-spacing: var(--tracking-luxury); }
+.tracking-widest   { letter-spacing: var(--tracking-widest); }
+
+.text-rose    { color: var(--color-rose-pastel); }
+.text-gold    { color: var(--color-gold); }
+.bg-beige     { background-color: var(--color-beige); }
+.bg-rose-soft { background-color: var(--color-rose-whisper); }
+
+/* Transition luxury par défaut sur tous les liens et boutons interactifs */
+a, button { transition: var(--transition-base); }

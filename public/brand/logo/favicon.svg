@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="TA FLEUR">
+  <!--
+    FAVICON SVG — 32x32 reference
+    Fonctionne aussi en 16x16, 48x48, 96x96
+    Simple, reconnaissable, mémorisable
+  -->
+
+  <!-- Fond carré arrondi -->
+  <rect width="32" height="32" rx="6" fill="#1A1A1A"/>
+
+  <!-- Petite rose stylisée — très simplifiée pour petite taille -->
+  <g transform="translate(16, 9)">
+    <!-- 5 pétales simples -->
+    <path d="M0,-5 C1.5,-6.5 3,-5 2.5,-3 C2,-1 0,0 0,0 C0,0 -2,-1 -2.5,-3 C-3,-5 -1.5,-6.5 0,-5Z" fill="#F2B5C5" opacity="0.9"/>
+    <path transform="rotate(72,0,0)"  d="M0,-5 C1.5,-6.5 3,-5 2.5,-3 C2,-1 0,0 0,0 C0,0 -2,-1 -2.5,-3 C-3,-5 -1.5,-6.5 0,-5Z" fill="#F2B5C5" opacity="0.9"/>
+    <path transform="rotate(144,0,0)" d="M0,-5 C1.5,-6.5 3,-5 2.5,-3 C2,-1 0,0 0,0 C0,0 -2,-1 -2.5,-3 C-3,-5 -1.5,-6.5 0,-5Z" fill="#F2B5C5" opacity="0.9"/>
+    <path transform="rotate(216,0,0)" d="M0,-5 C1.5,-6.5 3,-5 2.5,-3 C2,-1 0,0 0,0 C0,0 -2,-1 -2.5,-3 C-3,-5 -1.5,-6.5 0,-5Z" fill="#F2B5C5" opacity="0.9"/>
+    <path transform="rotate(288,0,0)" d="M0,-5 C1.5,-6.5 3,-5 2.5,-3 C2,-1 0,0 0,0 C0,0 -2,-1 -2.5,-3 C-3,-5 -1.5,-6.5 0,-5Z" fill="#F2B5C5" opacity="0.9"/>
+    <!-- Centre -->
+    <circle r="2.2" fill="#D4748C"/>
+    <circle r="1.2" fill="#B85C74"/>
+  </g>
+
+  <!-- "TA" centré -->
+  <text
+    x="16"
+    y="27"
+    font-family="'Playfair Display', Georgia, serif"
+    font-size="14"
+    font-weight="700"
+    fill="#FFFFFF"
+    text-anchor="middle"
+    letter-spacing="-0.5"
+  >TA</text>
+
+</svg>
