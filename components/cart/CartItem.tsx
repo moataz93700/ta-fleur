@@ -62,6 +62,13 @@ export default function CartItem({ item }: CartItemProps) {
           </button>
         </div>
 
+        {/* Option roses */}
+        {item.variantLabel && (
+          <p className="mt-0.5 font-display text-[0.52rem] font-semibold tracking-[0.12em] uppercase text-ta-gold">
+            ✦ {item.variantLabel}
+          </p>
+        )}
+
         {/* Message */}
         {item.message && (
           <p className="mt-1 font-sans text-[0.65rem] font-light italic text-ta-gray-400 line-clamp-1">

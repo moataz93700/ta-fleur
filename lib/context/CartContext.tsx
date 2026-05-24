@@ -26,14 +26,15 @@ import {
    TYPES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 export interface CartItem {
-  productId: string
-  slug:      string
-  name:      string
-  price:     number   // en centimes
-  image:     string
-  imageAlt:  string
-  quantity:  number
-  message?:  string
+  productId:    string
+  slug:         string
+  name:         string
+  price:        number   // en centimes (prix FINAL incluant option roses)
+  image:        string
+  imageAlt:     string
+  quantity:     number
+  message?:     string
+  variantLabel?: string  // ex : "50 roses" — affiché dans le panier
 }
 
 interface CartState {

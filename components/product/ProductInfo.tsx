@@ -107,9 +107,16 @@ export default function ProductInfo({ product, collectionName, collectionSlug }:
 
       {/* Prix */}
       <div className="flex items-end gap-3 mb-5">
-        <span className="font-serif text-3xl font-bold text-ta-black">
-          {formatPrice(product.price)}
-        </span>
+        <div>
+          {product.roseOptions && (
+            <p className="font-display text-[0.52rem] font-medium tracking-[0.12em] uppercase text-ta-gray-400 mb-0.5">
+              À partir de
+            </p>
+          )}
+          <span className="font-serif text-3xl font-bold text-ta-black">
+            {formatPrice(product.price)}
+          </span>
+        </div>
         {product.originalPrice && (
           <>
             <span className="font-sans text-base font-light text-ta-gray-300 line-through mb-0.5">
@@ -122,11 +129,12 @@ export default function ProductInfo({ product, collectionName, collectionSlug }:
         )}
       </div>
 
-      {/* Description */}
+      {/* Description — utilise la description du produit si disponible */}
       <p className="font-sans text-sm font-light text-ta-gray-500 leading-relaxed mb-5">
-        Une composition florale préparée avec soin le matin de votre livraison.
-        Chaque fleur est sélectionnée pour sa fraîcheur et sa beauté. Emballage
-        premium inclus, message personnalisé offert.
+        {product.description
+          ? product.description
+          : 'Une composition florale préparée avec soin le matin de votre livraison. Chaque fleur est sélectionnée pour sa fraîcheur et sa beauté. Emballage premium inclus, message personnalisé offert.'
+        }
       </p>
 
       {/* Occasions */}

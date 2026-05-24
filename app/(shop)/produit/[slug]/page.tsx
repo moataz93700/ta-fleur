@@ -56,12 +56,22 @@ export async function generateMetadata({
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function buildGallery(product: ReturnType<typeof getProductBySlug>) {
   if (!product) return []
-  const base = product.image.split('?')[0]
+  const isLocal = product.image.startsWith('/')
+  const base    = product.image.split('?')[0]
+  /* Images locales : même image pour toutes les vues (pas de query params CDN) */
+  if (isLocal) {
+    return [
+      { src: base, alt: product.imageAlt ?? product.name },
+      { src: base, alt: `${product.name} — vue détail` },
+      { src: base, alt: `${product.name} — composition` },
+      { src: base, alt: `${product.name} — emballage TA FLEUR` },
+    ]
+  }
   return [
-    { src: `${base}?w=800&q=85`,   alt: product.imageAlt ?? product.name },
+    { src: `${base}?w=800&q=85`,          alt: product.imageAlt ?? product.name },
     { src: `${base}?w=800&q=85&crop=entropy`, alt: `${product.name} — vue 2` },
-    { src: `${base}?w=800&q=80`,   alt: `${product.name} — détail` },
-    { src: `${base}?w=600&q=85`,   alt: `${product.name} — emballage` },
+    { src: `${base}?w=800&q=80`,          alt: `${product.name} — détail` },
+    { src: `${base}?w=600&q=85`,          alt: `${product.name} — emballage` },
   ]
 }
 
@@ -136,6 +146,7 @@ export default function ProductPage({
                 productImage={product.image}
                 productImageAlt={product.imageAlt ?? product.name}
                 inStock={product.inStock}
+                roseOptions={product.roseOptions}
               />
 
               <ProductTrust />

@@ -31,33 +31,42 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { cn, formatPrice } from '@/lib/utils'
 import { EASE_LUXURY } from '@/lib/animations'
 import { useCart } from '@/lib/context/CartContext'
+import type { RoseOption } from '@/lib/data/products'
 
 const MAX_MESSAGE = 150
 
 interface ProductActionsProps {
-  productId:   string
-  productName: string
-  productSlug: string
-  productPrice: number
-  productImage: string
+  productId:       string
+  productName:     string
+  productSlug:     string
+  productPrice:    number
+  productImage:    string
   productImageAlt: string
-  inStock:     boolean
+  inStock:         boolean
+  roseOptions?:    RoseOption[]
 }
 
 export default function ProductActions({
   productId, productName, productSlug,
   productPrice, productImage, productImageAlt, inStock,
+  roseOptions,
 }: ProductActionsProps) {
-  const [quantity,    setQuantity]    = useState(1)
-  const [message,     setMessage]     = useState('')
-  const [wishlisted,  setWishlisted]  = useState(false)
-  const [cartState,   setCartState]   = useState<'idle' | 'loading' | 'success'>('idle')
-  const [showSticky,  setShowSticky]  = useState(false)
+  const [quantity,      setQuantity]      = useState(1)
+  const [message,       setMessage]       = useState('')
+  const [wishlisted,    setWishlisted]    = useState(false)
+  const [cartState,     setCartState]     = useState<'idle' | 'loading' | 'success'>('idle')
+  const [showSticky,    setShowSticky]    = useState(false)
+  const [selectedRose,  setSelectedRose]  = useState<RoseOption | null>(
+    roseOptions ? roseOptions[0] : null
+  )
   /* Signaux d'urgence — initialisés côté client pour éviter l'hydration mismatch */
   const [watchers,    setWatchers]    = useState<number | null>(null)
   const [stockLeft,   setStockLeft]   = useState<number | null>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const { addItem, openCart } = useCart()
+
+  /* Prix final = base + surcoût option roses */
+  const finalPrice = productPrice + (selectedRose?.extraCost ?? 0)
 
   /* ── Signaux d'urgence (seed déterministe par productId) ── */
   useEffect(() => {
@@ -88,15 +97,18 @@ export default function ProductActions({
     if (!inStock || cartState !== 'idle') return
     setCartState('loading')
     setTimeout(() => {
+      /* L'ID cart inclut l'option roses pour traiter chaque variante séparément */
+      const cartId = selectedRose ? `${productId}-${selectedRose.count}` : productId
       addItem({
-        productId,
-        slug:      productSlug,
-        name:      productName,
-        price:     productPrice,
-        image:     productImage,
-        imageAlt:  productImageAlt,
+        productId:    cartId,
+        slug:         productSlug,
+        name:         productName,
+        price:        finalPrice,
+        image:        productImage,
+        imageAlt:     productImageAlt,
         quantity,
-        message:   message || undefined,
+        message:      message || undefined,
+        variantLabel: selectedRose?.label,
       })
       setCartState('success')
       openCart()
@@ -111,6 +123,92 @@ export default function ProductActions({
   return (
     <>
     <div className="space-y-5">
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          SÉLECTEUR ROSES PREMIUM
+          Affiché uniquement si le produit a des options de roses.
+          Design : boutons ronds, état actif rose poudré + bordure dorée.
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      {roseOptions && selectedRose && (
+        <div>
+          {/* Label + prix dynamique */}
+          <div className="flex items-baseline justify-between mb-3">
+            <span className="font-display text-[0.6rem] font-bold tracking-[0.15em] uppercase text-ta-black">
+              Nombre de roses
+            </span>
+            <motion.span
+              key={finalPrice}
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: EASE_LUXURY }}
+              className="font-serif text-xl font-bold text-ta-black"
+            >
+              {formatPrice(finalPrice)}
+            </motion.span>
+          </div>
+
+          {/* Grille des options */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+            {roseOptions.map((opt) => {
+              const isSelected = selectedRose.count === opt.count
+              return (
+                <motion.button
+                  key={opt.count}
+                  onClick={() => setSelectedRose(opt)}
+                  whileTap={{ scale: 0.94 }}
+                  transition={{ duration: 0.15 }}
+                  aria-label={`${opt.label}${opt.extraCost > 0 ? ` (+${formatPrice(opt.extraCost)})` : ''}`}
+                  aria-pressed={isSelected}
+                  className={cn(
+                    'relative flex flex-col items-center justify-center rounded-2xl py-3 px-2',
+                    'font-display font-semibold transition-all duration-300',
+                    'border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-ta-rose-medium',
+                    isSelected
+                      ? 'bg-ta-rose-warm border-ta-gold text-ta-black shadow-gold'
+                      : 'bg-white border-ta-beige-medium text-ta-black/60 hover:border-ta-rose-medium hover:text-ta-black hover:bg-ta-rose-warm/40',
+                  )}
+                >
+                  {/* Nombre de roses */}
+                  <span className="text-sm leading-none mb-0.5">
+                    {opt.count}
+                  </span>
+                  <span className="text-[0.5rem] tracking-[0.08em] uppercase leading-none">
+                    roses
+                  </span>
+
+                  {/* Badge surcoût */}
+                  {opt.extraCost > 0 && (
+                    <span className={cn(
+                      'absolute -top-2 left-1/2 -translate-x-1/2',
+                      'text-[0.42rem] font-bold tracking-wide px-1.5 py-0.5 rounded-full whitespace-nowrap',
+                      isSelected
+                        ? 'bg-ta-gold text-white'
+                        : 'bg-ta-beige-medium text-ta-gray-500',
+                    )}>
+                      +{opt.extraCost / 100}€
+                    </span>
+                  )}
+
+                  {/* Indicateur actif */}
+                  {isSelected && (
+                    <motion.span
+                      layoutId="rose-active"
+                      className="absolute inset-0 rounded-2xl ring-2 ring-ta-gold/50 pointer-events-none"
+                    />
+                  )}
+                </motion.button>
+              )
+            })}
+          </div>
+
+          {/* Hint discret */}
+          <p className="mt-2 font-sans text-[0.58rem] font-light text-ta-gray-400">
+            {selectedRose.count === 100
+              ? '✦ Composition XXL — livraison sous 48h'
+              : '✦ Composition préparée le matin même'}
+          </p>
+        </div>
+      )}
 
       {/* ── Message carte ── */}
       <div>
@@ -312,7 +410,7 @@ export default function ProductActions({
             <div className="flex-1 min-w-0">
               <p className="font-serif text-sm font-semibold text-ta-black truncate">{productName}</p>
               <p className="font-sans text-xs font-medium text-ta-rose-deep">
-                {formatPrice(productPrice * quantity)}
+                {formatPrice(finalPrice * quantity)}
               </p>
             </div>
 

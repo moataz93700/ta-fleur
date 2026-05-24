@@ -7,75 +7,108 @@
 import type { Product } from '@/components/ui/ProductCard'
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   OPTION ROSES — sélecteur quantité
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+export interface RoseOption {
+  count:     10 | 20 | 30 | 40 | 50 | 100
+  extraCost: number   // centimes additionnels par rapport au prix de base
+  label:     string   // ex : "10 roses"
+}
+
+export const DEFAULT_ROSE_OPTIONS: RoseOption[] = [
+  { count: 10,  extraCost: 0,     label: '10 roses' },
+  { count: 20,  extraCost: 4000,  label: '20 roses' },
+  { count: 30,  extraCost: 8000,  label: '30 roses' },
+  { count: 40,  extraCost: 12000, label: '40 roses' },
+  { count: 50,  extraCost: 16000, label: '50 roses' },
+  { count: 100, extraCost: 35000, label: '100 roses' },
+]
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    TYPE ÉTENDU (metadata collection)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 export interface ProductExtended extends Product {
-  collections: string[]   // slugs de collections
-  occasion:    string[]   // 'anniversaire' | 'mariage' | 'saint-valentin' | 'fete-meres' | 'remerciements'
-  createdAt:   string     // ISO date → tri "Nouveautés"
-  sales:       number     // → tri "Popularité"
+  collections:      string[]   // slugs de collections
+  occasion:         string[]   // 'anniversaire' | 'mariage' | 'saint-valentin' | 'fete-meres' | 'remerciements'
+  createdAt:        string     // ISO date → tri "Nouveautés"
+  sales:            number     // → tri "Popularité"
+  roseOptions?:     RoseOption[] // présent = fiche produit avec sélecteur roses
+  description?:     string       // description courte premium
+  descriptionLong?: string       // description longue émotionnelle
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    CATALOGUE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 export const allProducts: ProductExtended[] = [
-  // ── BOUQUETS ──────────────────────────────────────
+  // ── BOUQUETS SIGNATURE TA FLEUR ───────────────────
   {
-    id:            'p-01',
-    name:          'Bouquet Romance — Roses & Pivoines',
-    slug:          'bouquet-romance',
-    price:         6900,
-    originalPrice: 8500,
-    image:         'https://images.unsplash.com/photo-1490750967868-88df5691166b?w=600&q=80',
-    imageAlt:      'Bouquet de roses et pivoines roses',
-    badge:         'Bestseller',
-    inStock:       true,
-    collections:   ['bouquets', 'best-sellers'],
-    occasion:      ['saint-valentin', 'anniversaire'],
-    createdAt:     '2025-01-10',
-    sales:         847,
+    id:          'p-01',
+    name:        'Princesse Fuchsia',
+    slug:        'princesse-fuchsia',
+    price:       4900,
+    image:       '/products/princesse-fuchsia.png',
+    imageAlt:    'Bouquet de roses fuchsia avec tiara dorée, gypsophile perlé et ruban noir TA FLEUR',
+    badge:       'Bestseller',
+    inStock:     true,
+    collections: ['bouquets', 'best-sellers'],
+    occasion:    ['saint-valentin', 'anniversaire', 'fete-meres'],
+    createdAt:   '2025-01-10',
+    sales:       1247,
+    roseOptions: DEFAULT_ROSE_OPTIONS,
+    description: 'Roses fuchsia intenses, tiara royale, gypsophile perlé. Un bouquet qui déclare votre amour avec audace.',
+    descriptionLong: `La Princesse Fuchsia est une déclaration d'amour qui ne murmure pas — elle éclate. Des roses fuchsia d'une intensité rare, sélectionnées à l'aube pour leur éclat vibrant, disposées en dôme parfait. Une tiara dorée trône en leur cœur, symbole de royauté et d'affection absolue. Le gypsophile perlé encadre chaque rose comme un écrin de lumière. L'emballage noir TA FLEUR crée un contraste saisissant — l'obscurité qui sublime la lumière. Ce bouquet ne s'offre pas : il se dédie.`,
   },
   {
-    id:       'p-02',
-    name:     'Bouquet Douceur — Tulipes & Renoncules',
-    slug:     'bouquet-douceur',
-    price:    5500,
-    image:    'https://images.unsplash.com/photo-1567696911980-2c669aff9db1?w=600&q=80',
-    imageAlt: 'Bouquet pastel de tulipes et renoncules',
-    badge:    'Nouveau',
-    inStock:  true,
-    collections: ['bouquets'],
-    occasion:    ['anniversaire', 'remerciements'],
-    createdAt:   '2025-04-02',
-    sales:       312,
+    id:          'p-02',
+    name:        'Velours Rouge',
+    slug:        'velours-rouge',
+    price:       5400,
+    image:       '/products/velours-rouge.png',
+    imageAlt:    'Bouquet de roses rouge profond avec lettre diamant, tiara et ruban bordeaux TA FLEUR',
+    badge:       'Exclusif',
+    inStock:     true,
+    collections: ['bouquets', 'best-sellers'],
+    occasion:    ['saint-valentin', 'anniversaire'],
+    createdAt:   '2025-01-08',
+    sales:       986,
+    roseOptions: DEFAULT_ROSE_OPTIONS,
+    description: 'Roses rouge profond, lettre en cristaux, tiara royale. La déclaration d\'amour la plus puissante qui soit.',
+    descriptionLong: `Le Velours Rouge n'est pas un bouquet. C'est une confession. Des roses rouge sang, choisies pour leur velours et leur profondeur, portent en leur centre une lettre personnalisable ornée de cristaux scintillants — votre initiale, immortalisée dans l'écrin de l'amour. La tiara dorée couronne cet hommage floral. Le ruban bordeaux noue le tout avec une élégance dramatique. Chaque pétale dit ce que les mots n'osent pas dire. Offrez le Velours Rouge, et rien d'autre ne sera nécessaire.`,
   },
   {
-    id:       'p-03',
-    name:     'Bouquet Soleil — Tournesols & Mimosas',
-    slug:     'bouquet-soleil',
-    price:    4900,
-    image:    'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=600&q=80',
-    imageAlt: 'Bouquet de tournesols et mimosas jaunes',
-    inStock:  true,
-    collections: ['bouquets'],
-    occasion:    ['anniversaire', 'remerciements', 'fete-meres'],
-    createdAt:   '2025-02-14',
-    sales:       228,
+    id:          'p-03',
+    name:        'Azur Impérial',
+    slug:        'azur-imperial',
+    price:       5900,
+    image:       '/products/azur-imperial.png',
+    imageAlt:    'Bouquet de roses bleu royal avec lettre T en roses blanches, perles et ruban saphir TA FLEUR',
+    badge:       'Exclusif',
+    inStock:     true,
+    collections: ['bouquets', 'roses-eternelles'],
+    occasion:    ['anniversaire', 'saint-valentin', 'remerciements'],
+    createdAt:   '2025-02-01',
+    sales:       734,
+    roseOptions: DEFAULT_ROSE_OPTIONS,
+    description: 'Roses bleu royal, lettre personnalisée en roses blanches, perles nacré. Unique au monde.',
+    descriptionLong: `L'Azur Impérial est une pièce unique. Ces roses bleu royal — une teinte que la nature n'ose pas — sont l'expression d'une affection qui sort de l'ordinaire. Au cœur du bouquet, votre lettre personnalisée formée de roses blanches perlées se détache comme un message secret. Des perles dorées ponctuent l'ensemble, créant un dialogue entre le bleu profond et l'éclat nacré. Le ruban saphir noue cette œuvre florale avec la gravité d'un serment. Pour ceux qui n'offrent jamais ce que tout le monde offre.`,
   },
   {
-    id:       'p-04',
-    name:     'Bouquet Minimaliste — Freesias & Gypsophile',
-    slug:     'bouquet-minimaliste',
-    price:    5900,
-    image:    'https://images.unsplash.com/photo-1487530811015-780d31bf58a5?w=600&q=80',
-    imageAlt: 'Bouquet épuré de freesias blancs et gypsophile',
-    badge:    'Nouveau',
-    inStock:  true,
-    collections: ['bouquets'],
-    occasion:    ['mariage', 'remerciements'],
-    createdAt:   '2025-03-20',
-    sales:       156,
+    id:          'p-04',
+    name:        'Reine Blanche',
+    slug:        'reine-blanche',
+    price:       4900,
+    image:       '/products/reine-blanche.png',
+    imageAlt:    'Bouquet de roses blanches pures avec tiara dorée, tulle nacré et ruban blanc TA FLEUR',
+    badge:       'Nouveau',
+    inStock:     true,
+    collections: ['bouquets', 'best-sellers'],
+    occasion:    ['mariage', 'anniversaire', 'fete-meres', 'remerciements'],
+    createdAt:   '2025-04-10',
+    sales:       612,
+    roseOptions: DEFAULT_ROSE_OPTIONS,
+    description: 'Roses blanches immaculées, tiara dorée, voile de tulle nacré. Pureté et grâce absolues.',
+    descriptionLong: `La Reine Blanche est la pureté rendue visible. Des roses d'un blanc immaculé, chaque pétale comme une page vierge sur laquelle une émotion nouvelle s'écrit. Une tiara dorée se pose délicatement en leur sommet — couronne silencieuse d'une reine sereine. Le voile de tulle nacré enveloppe l'ensemble comme un nuage, doux et éthéré. Le ruban blanc satiné boucle cette composition avec la simplicité du sublime. Pour les moments où seul le blanc dit la vérité : mariages, naissances, gratitude pure, amour inconditionnel.`,
   },
   {
     id:       'p-05',
