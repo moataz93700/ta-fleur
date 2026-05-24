@@ -243,7 +243,25 @@ export default function Logo({
     )
   }
 
-  /* Compact (header) → SVG inline adaptatif dark/white */
+  /* Compact (header) — toujours sur fond blanc → PNG simplifié officiel
+     mix-blend-mode:multiply = fond blanc du PNG devient invisible          */
+  if (variant !== 'white') {
+    return (
+      <div className={cn('flex items-center', className)}>
+        <Image
+          src="/brand/logo-simplifie.png"
+          alt="TA FLEUR"
+          width={120}
+          height={120}
+          className="h-11 lg:h-12 w-auto"
+          style={{ mixBlendMode: 'multiply' }}
+          priority
+        />
+      </div>
+    )
+  }
+
+  /* Compact blanc (menus sombres) → SVG inline */
   return (
     <div className={cn('flex items-center', sizeMap[size], className)}>
       <LogoCompact colors={colors} />
