@@ -21,34 +21,35 @@ const config: Config = {
         ta: {
           /* Fonds */
           white:   '#FFFFFF',
+          ivory:   '#FFFEF5',           /* Ivoire — fond clair officiel */
           beige: {
-            light:      '#F8F2EE',
-            DEFAULT:    '#F5EDE8',
-            medium:     '#EDE3DC',
-            dark:       '#E0D0C8',
+            light:      '#F5E9EB',      /* Rose pâle officiel */
+            DEFAULT:    '#E7D0CA',      /* Beige chaud officiel */
+            medium:     '#DBBDB5',
+            dark:       '#CEADA4',
           },
-          /* Rose — couleur signature */
+          /* Rose — couleur signature officielle */
           rose: {
-            whisper:  '#FDF0F4',
-            warm:     '#FAD4E0',
-            pastel:   '#F2B5C5',
-            medium:   '#E8919F',
+            whisper:  '#FFF5F7',
+            warm:     '#F5E9EB',        /* Rose pâle officiel */
+            pastel:   '#F0C8D0',
+            medium:   '#E9B2BC',        /* Rose poudré officiel — COULEUR PRINCIPALE */
             deep:     '#D4748C',
             dark:     '#B85C74',
             wine:     '#8B3A52',
           },
-          /* Or — accent luxe */
+          /* Or — accent luxe officiel */
           gold: {
-            whisper:  '#FAF3E8',
-            light:    '#E8D5B0',
-            DEFAULT:  '#C9A96E',
-            medium:   '#B8904A',
-            dark:     '#9A7235',
+            whisper:  '#FAF3E0',
+            light:    '#EDD88A',
+            DEFAULT:  '#D4A537',        /* Doré officiel */
+            medium:   '#B88C1E',
+            dark:     '#9A7210',
           },
           /* Neutres */
-          black:  '#0F0F0F',
+          black:  '#222222',            /* Noir profond officiel */
           gray: {
-            900:  '#2D2D2D',
+            900:  '#3A3A3A',
             700:  '#4A4A4A',
             500:  '#6B6B6B',
             400:  '#8A8A8A',
@@ -130,15 +131,15 @@ const config: Config = {
          OMBRES
       ━━━━━━━━━━━━━━━━━━━━━━ */
       boxShadow: {
-        'rose':        '0 8px 32px 0 rgba(212, 116, 140, 0.18)',
-        'rose-lg':     '0 16px 56px 0 rgba(212, 116, 140, 0.24)',
-        'gold':        '0 8px 32px 0 rgba(201, 169, 110, 0.22)',
-        'gold-lg':     '0 16px 56px 0 rgba(201, 169, 110, 0.32)',
-        'beige':       '0 4px 24px 0 rgba(237, 227, 220, 0.60)',
-        'luxury':      '0 24px 80px 0 rgba(15, 15, 15, 0.14)',
-        'card':        '0 2px 8px 0 rgba(15, 15, 15, 0.06)',
-        'card-hover':  '0 12px 40px 0 rgba(15, 15, 15, 0.12)',
-        'inset-rose':  'inset 0 1px 3px 0 rgba(212, 116, 140, 0.15)',
+        'rose':        '0 8px 32px 0 rgba(233, 178, 188, 0.28)',   /* #E9B2BC rose poudré */
+        'rose-lg':     '0 16px 56px 0 rgba(233, 178, 188, 0.38)',
+        'gold':        '0 8px 32px 0 rgba(212, 165, 55, 0.22)',    /* #D4A537 doré */
+        'gold-lg':     '0 16px 56px 0 rgba(212, 165, 55, 0.32)',
+        'beige':       '0 4px 24px 0 rgba(231, 208, 202, 0.60)',   /* #E7D0CA beige chaud */
+        'luxury':      '0 24px 80px 0 rgba(34, 34, 34, 0.14)',     /* #222222 noir profond */
+        'card':        '0 2px 8px 0 rgba(34, 34, 34, 0.06)',
+        'card-hover':  '0 12px 40px 0 rgba(34, 34, 34, 0.12)',
+        'inset-rose':  'inset 0 1px 3px 0 rgba(233, 178, 188, 0.20)',
       },
 
       /* ━━━━━━━━━━━━━━━━━━━━━━

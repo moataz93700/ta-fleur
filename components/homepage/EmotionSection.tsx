@@ -31,10 +31,10 @@ export default function EmotionSection() {
           >
             <div className="absolute -inset-4 border border-ta-gold/20 rounded-3xl hidden lg:block" />
 
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-ta-beige-light">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-ta-rose-warm">
               <Image
-                src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800&q=80"
-                alt="Mains féminines recevant un bouquet de roses fraîches"
+                src="/brand/image-deco.png"
+                alt="Packaging premium TA FLEUR — sacs et bouquet de roses sur fond rose"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"

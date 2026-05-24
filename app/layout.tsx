@@ -75,8 +75,8 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
   icons: {
-    icon:  [{ url: '/brand/logo/favicon.svg', type: 'image/svg+xml' }, { url: '/favicon.ico', sizes: '32x32' }],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    icon:  [{ url: '/brand/favicon.png', type: 'image/png', sizes: '512x512' }, { url: '/brand/favicon.png', sizes: '32x32' }],
+    apple: [{ url: '/brand/favicon.png', sizes: '180x180' }],
   },
 }
 
