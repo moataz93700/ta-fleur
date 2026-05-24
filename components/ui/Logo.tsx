@@ -97,6 +97,83 @@ function RoseDecoration() {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LOGO — VERSION COMPLÈTE SVG (fonds sombres)
+   Pour hero, overlays sombres — variant white
+   ViewBox : 0 0 360 290
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+function LogoFull({ colors, showTagline }: {
+  colors: typeof colorMap.dark
+  showTagline: boolean
+}) {
+  return (
+    <svg
+      viewBox="0 0 360 290"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="TA FLEUR — Fleurs & Émotions"
+      role="img"
+    >
+      <defs>
+        <linearGradient id="goldTextGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stopColor="#EDD88A"/>
+          <stop offset="50%"  stopColor="#D4A537"/>
+          <stop offset="100%" stopColor="#9A7210"/>
+        </linearGradient>
+      </defs>
+
+      {/* Rose décorative centrée entre T et A */}
+      <g transform="translate(180,72)">
+        <RoseDecoration />
+      </g>
+
+      {/* Monogramme TA */}
+      <text
+        x="180" y="200"
+        fontFamily="var(--ta-playfair), 'Playfair Display', Georgia, serif"
+        fontSize="178"
+        fontWeight="700"
+        fill={colors.ta}
+        textAnchor="middle"
+        letterSpacing="-4"
+      >
+        TA
+      </text>
+
+      {/* FLEUR */}
+      <text
+        x="180" y="240"
+        fontFamily="var(--ta-montserrat), 'Montserrat', 'Helvetica Neue', sans-serif"
+        fontSize="21"
+        fontWeight="300"
+        fill={colors.fleur}
+        textAnchor="middle"
+        letterSpacing="18"
+      >
+        FLEUR
+      </text>
+
+      {/* Ligne or */}
+      <line x1="78" y1="254" x2="282" y2="254" stroke={colors.line} strokeWidth="0.6" opacity="0.7"/>
+
+      {/* Tagline */}
+      {showTagline && (
+        <text
+          x="180" y="273"
+          fontFamily="var(--ta-poppins), 'Poppins', system-ui, sans-serif"
+          fontSize="8.5"
+          fontWeight="300"
+          fill={colors.tagline}
+          textAnchor="middle"
+          letterSpacing="5"
+        >
+          FLEURS &amp; ÉMOTIONS
+        </text>
+      )}
+    </svg>
+  )
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    LOGO — VERSION COMPLÈTE PNG (stacked)
    Utilise le vrai asset PNG officiel
    mix-blend-mode:multiply efface le fond blanc
@@ -234,8 +311,17 @@ export default function Logo({
     )
   }
 
-  /* Stacked (footer, pages brand) → PNG logo principal */
+  /* Stacked :
+     • variant white  → SVG inline (fond sombre : hero, overlays)
+     • variant dark/gold → PNG logo principal avec mix-blend-mode:multiply (fond clair)  */
   if (layout === 'stacked') {
+    if (variant === 'white') {
+      return (
+        <div className={cn('flex items-center', sizeMap[size], className)}>
+          <LogoFull colors={colorMap.white} showTagline={showTagline} />
+        </div>
+      )
+    }
     return (
       <div className={cn('flex items-center', sizeMap[size], className)}>
         <LogoFullPNG size={size} />

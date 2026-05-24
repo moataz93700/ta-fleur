@@ -21,6 +21,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
+import Logo from '@/components/ui/Logo'
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    VARIANTS FRAMER MOTION
@@ -167,6 +168,22 @@ export default function HeroSection() {
       {/* ── Contenu principal ── */}
       <div className="relative z-10 w-full px-6 sm:px-10 lg:px-20 max-w-7xl mx-auto">
         <div className="max-w-xl lg:max-w-2xl">
+
+          {/* Logo TA FLEUR — version blanche pour fond sombre */}
+          <motion.div
+            custom={0.1}
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+            className="mb-8"
+          >
+            <Logo
+              variant="white"
+              size="xl"
+              layout="stacked"
+              showTagline
+            />
+          </motion.div>
 
           {/* Label collection */}
           <motion.p
