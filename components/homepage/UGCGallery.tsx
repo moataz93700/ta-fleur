@@ -11,22 +11,20 @@ import { useInView } from 'react-intersection-observer'
 import { fadeUp, scaleUp, staggerContainer, sectionHeader } from '@/lib/animations'
 
 interface UGCPost {
-  id:          string
-  image:       string
-  alt:         string
-  handle:      string
-  likes:       string
-  objectPos?:  string
+  id:     string
+  image:  string
+  alt:    string
+  handle: string
+  likes:  string
 }
 
 const ugcPosts: UGCPost[] = [
   {
-    id:        'u1',
-    image:     '/community/comm1.png',
-    alt:       'Bouquet de roses reçu par une cliente',
-    handle:    '@camille.paris',
-    likes:     '847',
-    objectPos: 'center center',
+    id:     'u1',
+    image:  '/community/comm1.png',
+    alt:    'Bouquet de roses reçu par une cliente',
+    handle: '@camille.paris',
+    likes:  '847',
   },
   {
     id:     'u2',
@@ -50,12 +48,11 @@ const ugcPosts: UGCPost[] = [
     likes:  '634',
   },
   {
-    id:        'u5',
-    image:     '/community/comm5.png',
-    alt:       'Mains recevant un bouquet romantique',
-    handle:    '@elise.lbk',
-    likes:     '3.4k',
-    objectPos: 'center top',
+    id:     'u5',
+    image:  '/community/comm5.png',
+    alt:    'Mains recevant un bouquet romantique',
+    handle: '@elise.lbk',
+    likes:  '3.4k',
   },
   {
     id:     'u6',
@@ -114,7 +111,6 @@ export default function UGCGallery() {
                 fill
                 sizes="(max-width: 640px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 ease-luxury group-hover:scale-105"
-                style={{ objectPosition: post.objectPos ?? 'center center' }}
               />
               <div className="absolute inset-0 bg-ta-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2">
                 <span className="text-2xl">♥</span>
