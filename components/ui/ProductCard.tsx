@@ -18,7 +18,6 @@
   Cohérence parfaite avec la charte : beige, rose, or, Playfair.
 */
 
-import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -26,6 +25,7 @@ import { HeartIcon, ShoppingBagIcon } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolid } from '@heroicons/react/24/solid'
 import { cn, formatPrice } from '@/lib/utils'
 import { EASE_LUXURY } from '@/lib/animations'
+import { useFavorites } from '@/lib/context/FavoritesContext'
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    TYPES
@@ -78,18 +78,19 @@ function ProductBadge({ label, color = 'rose' }: { label: string; color?: 'rose'
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 export default function ProductCard({
   product,
-  isWishlisted: isWishlistedProp = false,
+  isWishlisted: isWishlistedProp,
   onWishlist,
   className,
   priority = false,
 }: ProductCardProps) {
-  const [isWishlisted, setIsWishlisted] = useState(isWishlistedProp)
+  const { isFavorite, toggleFavorite } = useFavorites()
+  const isWishlisted = isWishlistedProp ?? isFavorite(product.id)
   const discount = product.originalPrice
     ? Math.round((1 - product.price / product.originalPrice) * 100)
     : null
 
   function handleWishlist() {
-    setIsWishlisted(w => !w)
+    toggleFavorite(product.id)
     onWishlist?.(product.id)
   }
 

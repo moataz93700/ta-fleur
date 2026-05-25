@@ -329,18 +329,16 @@ export default function Logo({
     )
   }
 
-  /* Compact (header) — toujours sur fond blanc → PNG simplifié officiel
-     mix-blend-mode:multiply = fond blanc du PNG devient invisible          */
+  /* Compact (header) — PNG officiel fond transparent */
   if (variant !== 'white') {
     return (
       <div className={cn('flex items-center', className)}>
         <Image
-          src="/brand/logo-simplifie.png"
-          alt="TA FLEUR"
-          width={120}
-          height={120}
+          src="/brand/logo-principal.png"
+          alt="TA FLEUR — Fleurs & Émotions"
+          width={160}
+          height={196}
           className="h-14 lg:h-16 w-auto"
-          style={{ mixBlendMode: 'multiply' }}
           priority
         />
       </div>

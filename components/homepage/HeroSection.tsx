@@ -168,7 +168,7 @@ export default function HeroSection() {
       <div className="relative z-10 w-full px-6 sm:px-10 lg:px-20 max-w-7xl mx-auto">
         <div className="max-w-xl lg:max-w-2xl">
 
-          {/* Logo TA FLEUR officiel — PNG sur panneau glass */}
+          {/* Logo TA FLEUR officiel — PNG fond transparent */}
           <motion.div
             custom={0.1}
             variants={fadeIn}
@@ -176,23 +176,15 @@ export default function HeroSection() {
             animate="visible"
             className="mb-8 inline-block"
           >
-            <div
-              className="inline-block rounded-2xl px-4 pt-4 pb-2"
-              style={{
-                background: 'rgba(255,255,255,0.92)',
-                backdropFilter: 'blur(8px)',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
-              }}
-            >
-              <Image
-                src="/brand/logo-principal.png"
-                alt="TA FLEUR — Fleurs & Émotions"
-                width={160}
-                height={196}
-                className="w-28 lg:w-36 h-auto"
-                priority
-              />
-            </div>
+            <Image
+              src="/brand/logo-principal.png"
+              alt="TA FLEUR — Fleurs & Émotions"
+              width={160}
+              height={196}
+              className="w-44 lg:w-56 h-auto"
+              style={{ filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.35)) brightness(0) invert(1)' }}
+              priority
+            />
           </motion.div>
 
           {/* Label collection */}

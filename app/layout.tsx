@@ -8,7 +8,9 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { Playfair_Display, Poppins, Montserrat } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
 import { CartProvider } from '@/lib/context/CartContext'
+import { FavoritesProvider } from '@/lib/context/FavoritesContext'
 import './globals.css'
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -95,9 +97,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <body className="bg-white text-ta-black antialiased">
-        <CartProvider>
-          {children}
-        </CartProvider>
+        <ClerkProvider>
+          <CartProvider>
+            <FavoritesProvider>
+              {children}
+            </FavoritesProvider>
+          </CartProvider>
+        </ClerkProvider>
       </body>
     </html>
   )
